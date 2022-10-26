@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:39:50 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/10/26 19:22:29 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/10/26 19:29:33 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,6 @@ void	parsing(int argc, char **argv)
 		put_error(CF_TMA, NULL);
 	if (ft_strncmp(ft_strrchr(argv[1], '.'), CUB, 5))
 		put_error(CF_CUB, NULL);
+	if (open(argv[1], O_RDONLY) == -1)
+		put_error(F_N, NULL);
 }
