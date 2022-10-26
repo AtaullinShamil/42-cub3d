@@ -6,7 +6,7 @@
 #    By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/26 18:15:13 by ntojamur          #+#    #+#              #
-#    Updated: 2022/10/26 18:22:11 by ntojamur         ###   ########.fr        #
+#    Updated: 2022/10/26 18:43:15 by ntojamur         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,15 @@ RM = rm -f
 FLAGS = -Wall -Wextra -Werror
 MLXFLAGS = -framework OpenGL -framework AppKit
 
-HEADERS	=	./cub3D.h
+HEADERS	=	./cub3D.h parsing/parsing.h error/error.h
 
 MAIN	=	main.c
 
-SRCS	=	$(MAIN)
+PARSING	=	parsing/parsing.c
+
+ERROR	=	error/error.c
+
+SRCS	=	$(MAIN) $(PARSING) $(ERROR)
 
 OBJ = $(SRCS:.c=.o)
 
