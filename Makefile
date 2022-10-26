@@ -6,7 +6,7 @@
 #    By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/26 18:15:13 by ntojamur          #+#    #+#              #
-#    Updated: 2022/10/26 18:43:15 by ntojamur         ###   ########.fr        #
+#    Updated: 2022/10/26 20:55:11 by ntojamur         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ HEADERS	=	./cub3D.h parsing/parsing.h error/error.h
 
 MAIN	=	main.c
 
-PARSING	=	parsing/parsing.c
+PARSING	=	parsing/parsing.c parsing/read_file.c
 
 ERROR	=	error/error.c
 

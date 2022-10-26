@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:37:44 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/10/26 19:27:31 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/10/26 20:58:13 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@
 #define CUB	".cub"
 
 void	parsing(int argc, char **argv);
+char	**ft_get_file(char *file);
 
 #endif
