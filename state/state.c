@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 16:55:27 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/10/27 17:00:40 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/10/27 21:36:05 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	init_amount(t_amount *data)
 {
-	data->C = 0;
-	data->F = 0;
-	data->NO = 0;
-	data->EA = 0;
-	data->SO = 0;
-	data->WE = 0;
+	data->n_c = 0;
+	data->n_f = 0;
+	data->n_no = 0;
+	data->n_ea = 0;
+	data->n_so = 0;
+	data->n_we = 0;
 }

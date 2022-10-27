@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 17:20:55 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/10/27 17:24:09 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/10/27 21:37:20 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	split_size(char **split)
 	i = 0;
 	while (split[i])
 		i++;
-	return(i);
+	return (i);
 }
 
 void	free_split(char **split)
