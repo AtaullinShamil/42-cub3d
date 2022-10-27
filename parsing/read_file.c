@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 20:53:36 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/10/26 20:59:08 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/10/27 17:44:47 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static char	*string_init(void)
 
 	str = malloc(sizeof(char));
 	if (!str)
-		put_error("malloc error", NULL);
+		put_error_exit("malloc error", NULL);
 	str[0] = '\0';
 	return (str);
 }
@@ -40,14 +40,14 @@ static char	*ft_read(char *file)
 		if (return_value < 0)
 		{
 			free(map_string);
-			put_error("read error", NULL);
+			put_error_exit("read error", NULL);
 		}
 		buffer[return_value] = '\0';
 		str = map_string;
 		map_string = ft_strjoin(str, buffer);
 		free (str);
 		if (!map_string)
-			put_error("malloc error", NULL);
+			put_error_exit("malloc error", NULL);
 	}
 	return (map_string);
 }
@@ -62,7 +62,7 @@ char	**ft_get_file(char *file)
 	if (!map)
 	{
 		free(line);
-		put_error("malloc error", NULL);
+		put_error_exit("malloc error", NULL);
 	}
 	free(line);
 	return (map);

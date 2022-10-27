@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:15:06 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/10/26 18:41:02 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/10/27 16:46:50 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@
 # include "stdio.h"
 
 #include "parsing/parsing.h"
+#include "state/state.h"
 
 #endif

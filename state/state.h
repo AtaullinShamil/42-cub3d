@@ -1,21 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   state.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 18:15:10 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/10/27 16:47:25 by ntojamur         ###   ########.fr       */
+/*   Created: 2022/10/27 16:44:00 by ntojamur          #+#    #+#             */
+/*   Updated: 2022/10/27 17:02:34 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#ifndef STATE_H
+# define STATE_H
 
-int	main(int argc, char **argv)
+typedef struct s_amount
 {
-	t_state	cub;
+	int	NO;
+	int	SO;
+	int	WE;
+	int	EA;
+	int F;
+	int C;
+}	t_amount;
 
-	parsing(argc, argv, &cub);
-	return (0);
-}
+
+typedef struct s_state
+{
+	char		**file;
+	t_amount	data;
+}	t_state;
+
+void	init_amount(t_amount *data);
+
+#endif

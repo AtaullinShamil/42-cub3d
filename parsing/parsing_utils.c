@@ -1,21 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parsing_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 18:15:10 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/10/27 16:47:25 by ntojamur         ###   ########.fr       */
+/*   Created: 2022/10/27 17:20:55 by ntojamur          #+#    #+#             */
+/*   Updated: 2022/10/27 17:24:09 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "parsing.h"
 
-int	main(int argc, char **argv)
+int	split_size(char **split)
 {
-	t_state	cub;
+	int	i;
 
-	parsing(argc, argv, &cub);
-	return (0);
+	i = 0;
+	while (split[i])
+		i++;
+	return(i);
+}
+
+void	free_split(char **split)
+{
+	int	i;
+
+	i = 0;
+	while (split[i])
+	{
+		free(split[i]);
+		i++;
+	}
 }

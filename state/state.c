@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   state.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 18:15:10 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/10/27 16:47:25 by ntojamur         ###   ########.fr       */
+/*   Created: 2022/10/27 16:55:27 by ntojamur          #+#    #+#             */
+/*   Updated: 2022/10/27 17:00:40 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "state.h"
 
-int	main(int argc, char **argv)
+void	init_amount(t_amount *data)
 {
-	t_state	cub;
-
-	parsing(argc, argv, &cub);
-	return (0);
+	data->C = 0;
+	data->F = 0;
+	data->NO = 0;
+	data->EA = 0;
+	data->SO = 0;
+	data->WE = 0;
 }
