@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 16:44:00 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/10/27 21:35:27 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/10/28 05:43:25 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ typedef struct s_amount
 typedef struct s_malloc
 {
 	char	**info[6];
-	char	**digits[2];
 }	t_malloc;
 
 typedef struct s_state

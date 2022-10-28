@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 17:20:55 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/10/27 21:37:20 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/10/28 05:42:01 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,5 @@ void	free_split(char **split)
 		free(split[i]);
 		i++;
 	}
+	free(split);
 }

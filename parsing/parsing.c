@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:39:50 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/10/27 21:39:24 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/10/28 05:45:54 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,24 +85,26 @@ static int	check_digits(char **split)
 	return (0);
 }
 
-static int	check_rgb(t_state *cub, char **split, char *string)
+static int	check_rgb(char **split, char *string)
 {
-	static int	i;
+	char **split_digits;
 
-	i = 0;
 	if (!ft_strncmp(split[0], "F", 2) || !ft_strncmp(split[0], "C", 2))
 	{
-		cub->mem.digits[i] = ft_split(split[1], ',');
-		if (split_size(cub->mem.digits[i]) != 3)
+		split_digits = ft_split(split[1], ',');
+		if (split_size(split_digits) != 3)
 		{
+			free_split(split_digits);
 			put_error(S_D, string);
 			return (1);
 		}
-		if (check_digits(cub->mem.digits[i]))
+		if (check_digits(split_digits))
 		{
+			free_split(split_digits);
 			put_error(S_A_D, string);
 			return (1);
 		}
+		free_split(split_digits);
 	}
 	return (0);
 }
@@ -119,7 +121,7 @@ static int	check_string(t_state *cub, char *string, int i)
 		return (1);
 	if (check_xpm(split, string))
 		return (1);
-	if (check_rgb(cub, split, string))
+	if (check_rgb(split, string))
 		return (1);
 	return (0);
 }
@@ -137,10 +139,24 @@ static void	parse_strings(t_state *cub)
 	}
 }
 
+void	free_all(t_state *cub)
+{
+	int	i;
+
+	free_split(cub->file);
+	i = 0;
+	while (i < 6)
+	{
+		free_split(cub->mem.info[i]);
+		i++;
+	}
+}
+
 void	parsing(int argc, char **argv, t_state *cub)
 {
 	parse_conf(argc, argv);
 	cub->file = ft_get_file(argv[1]);
 	//init_amount(&cub->data);
 	parse_strings(cub);
+	free_all(cub);
 }
