@@ -6,7 +6,7 @@
 #    By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/26 18:15:13 by ntojamur          #+#    #+#              #
-#    Updated: 2022/10/27 17:22:38 by ntojamur         ###   ########.fr        #
+#    Updated: 2022/10/28 19:46:45 by ntojamur         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,9 @@ MAIN	=	main.c
 
 PARSING	=	parsing/parsing.c \
 			parsing/read_file.c \
-			parsing/parsing_utils.c
+			parsing/parsing_utils.c \
+			parsing/check_digits.c \
+			parsing/check_strings.c
 
 ERROR	=	error/error.c
 
