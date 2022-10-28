@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:39:50 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/10/28 05:45:54 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/10/28 18:11:39 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,27 +85,46 @@ static int	check_digits(char **split)
 	return (0);
 }
 
+static int	check_number(char **split_digits)
+{
+	int	i;
+	int	num;
+
+	i = 0;
+	while (split_digits[i])
+	{
+		num = ft_atoi(split_digits[i]);
+		if (num > 255)
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
 static int	check_rgb(char **split, char *string)
 {
-	char **split_digits;
+	char	**split_digits;
 
-	if (!ft_strncmp(split[0], "F", 2) || !ft_strncmp(split[0], "C", 2))
+	split_digits = ft_split(split[1], ',');
+	if (split_size(split_digits) != 3)
 	{
-		split_digits = ft_split(split[1], ',');
-		if (split_size(split_digits) != 3)
-		{
-			free_split(split_digits);
-			put_error(S_D, string);
-			return (1);
-		}
-		if (check_digits(split_digits))
-		{
-			free_split(split_digits);
-			put_error(S_A_D, string);
-			return (1);
-		}
 		free_split(split_digits);
+		put_error(S_D, string);
+		return (1);
 	}
+	if (check_digits(split_digits))
+	{
+		free_split(split_digits);
+		put_error(S_A_D, string);
+		return (1);
+	}
+	if (check_number(split_digits))
+	{
+		free_split(split_digits);
+		put_error(ERR_NUM, string);
+		return (1);
+	}
+	free_split(split_digits);
 	return (0);
 }
 
@@ -121,8 +140,9 @@ static int	check_string(t_state *cub, char *string, int i)
 		return (1);
 	if (check_xpm(split, string))
 		return (1);
-	if (check_rgb(split, string))
-		return (1);
+	if (!ft_strncmp(split[0], "F", 2) || !ft_strncmp(split[0], "C", 2))
+		if (check_rgb(split, string))
+			return (1);
 	return (0);
 }
 
