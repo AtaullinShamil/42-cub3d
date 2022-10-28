@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 16:44:00 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/10/28 05:43:25 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/10/28 18:14:10 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,11 @@ typedef struct s_amount
 	int	n_c;
 }	t_amount;
 
-typedef struct s_malloc
-{
-	char	**info[6];
-}	t_malloc;
-
 typedef struct s_state
 {
 	char		**file;
+	char		**info[6];
 	t_amount	data;
-	t_malloc	mem;
 }	t_state;
 
 void	init_amount(t_amount *data);

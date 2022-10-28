@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:39:50 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/10/28 18:11:39 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/10/28 18:17:48 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,8 +132,8 @@ static int	check_string(t_state *cub, char *string, int i)
 {
 	char	**split;
 
-	cub->mem.info[i] = ft_split(string, ' ');
-	split = cub->mem.info[i];
+	cub->info[i] = ft_split(string, ' ');
+	split = cub->info[i];
 	if (check_names(split, string))
 		return (1);
 	if (check_size(split, string))
@@ -167,7 +167,7 @@ void	free_all(t_state *cub)
 	i = 0;
 	while (i < 6)
 	{
-		free_split(cub->mem.info[i]);
+		free_split(cub->info[i]);
 		i++;
 	}
 }
