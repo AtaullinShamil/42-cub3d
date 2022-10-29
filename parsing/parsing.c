@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:39:50 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/10/29 04:59:34 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/10/29 19:19:09 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,17 @@ void	parse_repeats(t_state *cub)
 
 }
 
+void	split_color(char *color, int	*place)
+{
+	char	**split;
+
+	split = ft_split(color, ',');
+	place[0] = ft_atoi(split[0]);
+	place[1] = ft_atoi(split[1]);
+	place[2] = ft_atoi(split[2]);
+	free_split(split);
+}
+
 void	init_arg(t_state *cub)
 {
 	int	i;
@@ -82,9 +93,9 @@ void	init_arg(t_state *cub)
 		else if (ft_strncmp(cub->info[i][0], "SO", 3) == 0)
 			cub->c_so = cub->info[i][1];
 		else if (ft_strncmp(cub->info[i][0], "F", 2) == 0)
-			cub->c_f = cub->info[i][1];
+			split_color(cub->info[i][1], cub->floor);
 		else if (ft_strncmp(cub->info[i][0], "C", 2) == 0)
-			cub->c_c = cub->info[i][1];
+			split_color(cub->info[i][1], cub->ceiling);
 		i++;
 	}
 }
@@ -96,10 +107,4 @@ void	parsing(int argc, char **argv, t_state *cub)
 	parse_strings(cub);
 	parse_repeats(cub);
 	init_arg(cub);
-	printf("%s\n",cub->c_c);
-	printf("%s\n",cub->c_f);
-	printf("%s\n",cub->c_ea);
-	printf("%s\n",cub->c_we);
-	printf("%s\n",cub->c_no);
-	printf("%s\n",cub->c_so);
 }

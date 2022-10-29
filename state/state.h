@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 16:44:00 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/10/29 05:00:16 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/10/29 19:09:33 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ typedef struct s_state
 	char		*c_we;
 	char		*c_no;
 	char		*c_so;
-	char		*c_f;
-	char		*c_c;
+	int			floor[3];
+	int			ceiling[3];
 }	t_state;
 
 void	init_amount(t_amount *data);
