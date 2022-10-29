@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 16:44:00 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/10/28 18:14:10 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/10/29 05:00:16 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,12 @@ typedef struct s_state
 	char		**file;
 	char		**info[6];
 	t_amount	data;
+	char		*c_ea;
+	char		*c_we;
+	char		*c_no;
+	char		*c_so;
+	char		*c_f;
+	char		*c_c;
 }	t_state;
 
 void	init_amount(t_amount *data);
