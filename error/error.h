@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:42:14 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/10/28 18:05:40 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/10/29 04:28:02 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # define S_D		"there should be three digits : "
 # define S_A_D		"arguments must be numbers : "
 # define ERR_NUM	"the number must be between 0 and 255 : "
+# define ERR_R		"there is a repetition of arguments in the file"
 
 void	put_error_exit(char *str, char *src);
 void	put_error(char *str, char *src);

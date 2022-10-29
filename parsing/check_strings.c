@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 19:46:21 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/10/28 19:48:08 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/10/29 04:24:44 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,10 @@ void	parse_strings(t_state *cub)
 	while (i < 6)
 	{
 		if (check_string(cub, cub->file[i], i))
+		{
+			//free_all(cub);
 			exit(1);
+		}
 		i++;
 	}
 }
