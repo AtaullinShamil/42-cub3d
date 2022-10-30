@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:39:50 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/10/30 17:05:33 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/10/30 18:42:59 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,6 @@ void	parsing(int argc, char **argv, t_state *cub)
 	parse_strings(cub);
 	parse_repeats(cub);
 	init_arg(cub);
+	cub->map = &cub->file[6];
+	parse_map(cub->map);
 }
