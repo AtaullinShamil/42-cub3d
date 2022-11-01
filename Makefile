@@ -6,7 +6,7 @@
 #    By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/26 18:15:13 by ntojamur          #+#    #+#              #
-#    Updated: 2022/10/30 18:43:41 by ntojamur         ###   ########.fr        #
+#    Updated: 2022/10/30 20:12:52 by ntojamur         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,8 @@ PARSING	=	parsing/parsing.c \
 			parsing/check_digits.c \
 			parsing/check_strings.c \
 			parsing/repeats_and_arg.c \
-			parsing/parsing_map.c
+			parsing/parsing_map.c \
+			parsing/check_walls.c
 
 ERROR	=	error/error.c
 

@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 18:42:26 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/10/30 18:43:18 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/10/30 20:13:13 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,17 @@ static int	cord_repits(char **map)
 		j = -1;
 		while (map[i][++j])
 		{
-			if (map[i][j] == 'S' || map[i][j] == 'N' || map[i][j] == 'E' || map[i][j] == 'W')
+			if (map[i][j] == 'S' || map[i][j] == 'N' || \
+			map[i][j] == 'E' || map[i][j] == 'W')
 				coordinate++;
-			if (coordinate > 1)
-			{
-				put_error(ERR_M_C, NULL);
-				return (1);
-			}
 		}
 	}
+	if (coordinate != 1)
+	{
+		put_error(ERR_M_C, NULL);
+		return (1);
+	}
 	return (0);
-
 }
 
 static int	parse_symbols(char **map)
@@ -64,5 +64,7 @@ void	parse_map(char **map)
 	if (parse_symbols(map))
 		exit(1);
 	if (cord_repits(map))
+		exit(1);
+	if (check_walls(map))
 		exit(1);
 }
