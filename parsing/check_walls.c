@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 20:12:23 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/11/01 09:37:14 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/11/01 10:02:19 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,30 +84,24 @@ static int	check_map_all(char **map)
 {
 	int	x;
 	int	y;
-	int	y_m;
-	int	x_m;
 
-	y_m = split_size(map);
 	y = 0;
-	while (++y < y_m - 2)
+	while (++y < split_size(map) - 2)
 	{
 		x = -1;
-		x_m = ft_strlen(map[y]);
-		while (++x < x_m - 2)
+		while (++x < (int)ft_strlen(map[y]) - 2)
 		{
 			if (map[y][x] == '0')
-			{
-				if ((map[y][x + 1] != '0' && map[y][x + 1] != '1' && ft_strchr(C_D, map[y][x + 1]) == NULL) || \
-					(map[y][x - 1] != '0' && map[y][x - 1] != '1' && ft_strchr(C_D, map[y][x - 1]) == NULL) || \
-					(map[y + 1][x] != '0' && map[y + 1][x] != '1' && ft_strchr(C_D, map[y + 1][x]) == NULL) || \
-					(map[y - 1][x] != '0' && map[y - 1][x] != '1' && ft_strchr(C_D, map[y - 1][x]) == NULL))
+				if (ft_strchr("NSEW01", map[y][x + 1]) == NULL || \
+				ft_strchr("NSEW01", map[y][x - 1]) == NULL || \
+				ft_strchr("NSEW01", map[y + 1][x]) == NULL || \
+				ft_strchr("NSEW01", map[y - 1][x]) == NULL)
 					return (1);
-			}
-			else if (ft_strchr(C_D, map[y][x]) != NULL)
-			if ((map[y][x + 1] != '0' && map[y][x + 1] != '1') || \
-				(map[y][x - 1] != '0' && map[y][x - 1] != '1') || \
-				(map[y + 1][x] != '0' && map[y + 1][x] != '1') || \
-				(map[y - 1][x] != '0' && map[y - 1][x] != '1'))
+			if (ft_strchr("NSEW", map[y][x]) != NULL)
+				if (ft_strchr("01", map[y][x + 1]) == NULL || \
+					ft_strchr("01", map[y][x - 1]) == NULL || \
+					ft_strchr("01", map[y + 1][x]) == NULL || \
+					ft_strchr("01", map[y - 1][x]) == NULL)
 					return (1);
 		}
 	}
@@ -125,7 +119,7 @@ int	check_walls(char **map)
 	}
 	if (check_map_all(map))
 	{
-		put_error("ZALUPA", NULL);
+		put_error(ERR_M_A, NULL);
 		return (1);
 	}
 	return (0);
