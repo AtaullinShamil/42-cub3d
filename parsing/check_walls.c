@@ -6,12 +6,11 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 20:12:23 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/11/01 10:02:19 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/11/01 10:06:50 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parsing.h"
-#include "stdio.h"
 
 static int	check_walls_left_to_right(char **map)
 {
