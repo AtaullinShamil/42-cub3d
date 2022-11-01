@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:37:44 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/10/30 20:13:31 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/11/01 09:37:51 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # define CUB	".cub"
 # define XPM	".xpm"
 # define M_S	" 10NSEW"
-
+# define C_D	"NSEW"
 void	parsing(int argc, char **argv, t_state *cub);
 char	**ft_get_file(char *file);
 void	parse_strings(t_state *cub);
