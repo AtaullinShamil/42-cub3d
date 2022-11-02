@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:15:10 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/11/02 17:26:14 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/11/02 17:44:23 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,27 +20,22 @@ int	esc(t_state *cub)
 	exit(0);
 }
 
-// void	set_the_teture(char *xpm, t_img_info *info, t_state *cub)
-// {
-// 	int x;
-// 	int y;
-// 	int i;
+void	set_the_teture(char *xpm, t_img_info *info, t_state *cub)
+{
+	int	x;
+	int	y;
 
-// 	printf("as11111\n");
-// 	info->img = mlx_xpm_file_to_image(cub->mlx, xpm, &info->x, &info->y);
-// 	printf("22222\n");
-// 	info->adr = (int *)mlx_get_data_addr(info->img, &x, &y, &i);
-// }
+	info->img = mlx_xpm_file_to_image(cub->mlx, xpm, &x, &y);
+	info->adr = (int *)mlx_get_data_addr(info->img, &info->bpp, &info->size_line, &info->endian);
+}
 
-// void	set_all_textures(t_state *cub)
-// {
-// 	printf("as1\n");
-// 	set_the_teture(cub->c_ea, &cub->img.ea, cub);
-// 	printf("as\n");
-// 	set_the_teture(cub->c_we, &cub->img.we, cub);
-// 	set_the_teture(cub->c_no, &cub->img.no, cub);
-// 	set_the_teture(cub->c_so, &cub->img.so, cub);
-// }
+void	set_all_textures(t_state *cub)
+{
+	set_the_teture(cub->sprites.c_ea, &cub->img.ea, cub);
+	set_the_teture(cub->sprites.c_we, &cub->img.we, cub);
+	set_the_teture(cub->sprites.c_no, &cub->img.no, cub);
+	set_the_teture(cub->sprites.c_so, &cub->img.so, cub);
+}
 
 void	draw_ceiling_and_floor(t_state *cub)
 {
@@ -64,7 +59,7 @@ int	main(int argc, char **argv)
 	cub.mlx = mlx_init();
 	cub.win = mlx_new_window(cub.mlx, RES_X, RES_Y, "cub3D");
 
-	//set_all_textures(&cub);
+	set_all_textures(&cub);
 	cub.img.window.img = mlx_new_image(cub.mlx, RES_X, RES_Y);
 	cub.img.window.adr = (int *)mlx_get_data_addr(cub.img.window.img, &cub.img.window.bpp, &cub.img.window.size_line, &cub.img.window.endian);
 	draw_ceiling_and_floor(&cub);
