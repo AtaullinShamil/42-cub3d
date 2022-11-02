@@ -6,7 +6,7 @@
 #    By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/26 18:15:13 by ntojamur          #+#    #+#              #
-#    Updated: 2022/10/30 20:12:52 by ntojamur         ###   ########.fr        #
+#    Updated: 2022/11/02 19:01:35 by ntojamur         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ MLXFLAGS = -framework OpenGL -framework AppKit
 HEADERS	=	cub3D.h \
 			parsing/parsing.h \
 			error/error.h \
-			state/state.h
+			state/state.h \
+			game/game.h
 
 MAIN	=	main.c
 
@@ -36,7 +37,10 @@ ERROR	=	error/error.c
 
 STATE	=	state/state.c
 
-SRCS	=	$(MAIN) $(PARSING) $(ERROR) $(STATE)
+GAME	=	game/game.c \
+			game/render.c
+
+SRCS	=	$(MAIN) $(PARSING) $(ERROR) $(STATE) $(GAME)
 
 OBJ = $(SRCS:.c=.o)
 

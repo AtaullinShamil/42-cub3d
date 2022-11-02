@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3D.h                                            :+:      :+:    :+:   */
+/*   game.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 18:15:06 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/11/02 18:58:35 by ntojamur         ###   ########.fr       */
+/*   Created: 2022/11/02 18:53:56 by ntojamur          #+#    #+#             */
+/*   Updated: 2022/11/02 19:03:17 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#ifndef GAME_H
+# define GAME_H
 
-# include "libft/libft.h"
-# include "mlx/mlx.h"
+# include "../mlx/mlx.h"
+# include "../state/state.h"
 
-# include "stdio.h"
-
-# include "parsing/parsing.h"
-# include "state/state.h"
-# include "game/game.h"
+void	game(t_state *cub);
+void	render(t_state *cub);
 
 #endif
