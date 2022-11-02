@@ -3,8 +3,8 @@ SO ./../sprites/south.xpm
 WE ./../sprites/west.xpm
 EA ./../sprites/east.xpm
 
-F 100,100,100
-C 0,255,255
+F 255,0,0
+C 75,0,130
 
 1111111 11111
 1000001 10001

@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 17:04:54 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/11/01 09:58:41 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/11/02 16:11:06 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,8 @@ static void	split_color(char *color, int	*place)
 	char	**split;
 
 	split = ft_split(color, ',');
-	place[0] = ft_atoi(split[0]);
-	place[1] = ft_atoi(split[1]);
-	place[2] = ft_atoi(split[2]);
+	*place = (ft_atoi(split[0]) << 16) | (ft_atoi(split[1]) << 8) \
+	| (ft_atoi(split[2]) << 0);
 	free_split(split);
 }
 
@@ -75,9 +74,9 @@ void	init_arg(t_state *cub)
 		else if (ft_strncmp(cub->info[i][0], "SO", 3) == 0)
 			cub->c_so = cub->info[i][1];
 		else if (ft_strncmp(cub->info[i][0], "F", 2) == 0)
-			split_color(cub->info[i][1], cub->floor);
+			split_color(cub->info[i][1], &cub->floor);
 		else if (ft_strncmp(cub->info[i][0], "C", 2) == 0)
-			split_color(cub->info[i][1], cub->ceiling);
+			split_color(cub->info[i][1], &cub->ceiling);
 		i++;
 	}
 }

@@ -6,18 +6,12 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:15:10 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/11/02 05:09:02 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/11/02 16:09:56 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 #include "stdio.h"
-
-void	rgb_to_hex(t_state *cub)
-{
-	cub->floor_color = (1 << 24 | cub->floor[0] << 16 | cub->floor[1] << 8 | cub->floor[2]);
-	cub->ceiling_color = (1 << 24 | cub->ceiling[0] << 16 | cub->ceiling[1] << 8 | cub->ceiling[2]);
-}
 
 // void	set_the_teture(char *xpm, t_img_info *info, t_state *cub)
 // {
@@ -49,10 +43,10 @@ void	draw_celling_and_floor(t_state *cub)
 	dst = (unsigned int *)cub->img.data_addr;
 	i = RES_X * RES_Y / 2 + 1;
 	while (--i > 0)
-	*dst++ = cub->ceiling_color;
+	*dst++ = cub->ceiling;
 	i = RES_X * RES_Y / 2 + 1;
 	while (--i > 0)
-	*dst++ = cub->floor_color;
+	*dst++ = cub->floor;
 }
 
 int	main(int argc, char **argv)
@@ -60,7 +54,6 @@ int	main(int argc, char **argv)
 	t_state	cub;
 
 	parsing(argc, argv, &cub);
-	rgb_to_hex(&cub);
 	cub.mlx = mlx_init();
 	cub.win = mlx_new_window(cub.mlx, RES_X, RES_Y, "cub3D");
 
