@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 16:44:00 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/11/02 16:09:29 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/11/02 17:15:57 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ typedef struct s_img_info	////
 {							////
 	void	*img;			////
 	int		*adr;			////
-	int		x;				////
-	int		y;				////
+	int		bpp;			////
+	int		size_line;		////
 	int		endian;			////
 }	t_img_info;				////
 
@@ -41,11 +41,7 @@ typedef struct s_img		////
 	t_img_info	we;			////
 	t_img_info	so;			////
 	t_img_info	ea;			////
-	void	*img_ptr;		////
-	int		*data_addr;		////
-	int			bpp;		////
-	int			size_line;	////
-	int			endian;		////
+	t_img_info	window;
 }	t_img;					////
 
 

@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:15:10 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/11/02 17:12:13 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/11/02 17:18:43 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,12 @@ int	esc(t_state *cub)
 // 	set_the_teture(cub->c_so, &cub->img.so, cub);
 // }
 
-void	draw_celling_and_floor(t_state *cub)
+void	draw_ceiling_and_floor(t_state *cub)
 {
 	unsigned int		*dst;
 	int					i;
 
-	dst = (unsigned int *)cub->img.data_addr;
+	dst = (unsigned int *)cub->img.window.adr;
 	i = RES_X * RES_Y / 2 + 1;
 	while (--i > 0)
 	*dst++ = cub->ceiling;
@@ -65,10 +65,10 @@ int	main(int argc, char **argv)
 	cub.win = mlx_new_window(cub.mlx, RES_X, RES_Y, "cub3D");
 
 	//set_all_textures(&cub);
-	cub.img.img_ptr = mlx_new_image(cub.mlx, RES_X, RES_Y);
-	cub.img.data_addr = (int *)mlx_get_data_addr(cub.img.img_ptr, &cub.img.bpp, &cub.img.size_line, &cub.img.endian);
-	draw_celling_and_floor(&cub);
-	mlx_put_image_to_window(cub.mlx, cub.win, cub.img.img_ptr, 0, 0);
+	cub.img.window.img = mlx_new_image(cub.mlx, RES_X, RES_Y);
+	cub.img.window.adr = (int *)mlx_get_data_addr(cub.img.window.img, &cub.img.window.bpp, &cub.img.window.size_line, &cub.img.window.endian);
+	draw_ceiling_and_floor(&cub);
+	mlx_put_image_to_window(cub.mlx, cub.win, cub.img.window.img, 0, 0);
 
 	mlx_hook(cub.win, 17, 0, esc, &cub);
 
