@@ -6,12 +6,18 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:15:10 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/11/02 16:09:56 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/11/02 17:10:18 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 #include "stdio.h"
+
+int	esc(t_state *cub)
+{
+	mlx_destroy_window(cub->mlx, cub->win);
+	exit(0);
+}
 
 // void	set_the_teture(char *xpm, t_img_info *info, t_state *cub)
 // {
@@ -62,6 +68,8 @@ int	main(int argc, char **argv)
 	cub.img.data_addr = (int *)mlx_get_data_addr(cub.img.img_ptr, &cub.img.bpp, &cub.img.size_line, &cub.img.endian);
 	draw_celling_and_floor(&cub);
 	mlx_put_image_to_window(cub.mlx, cub.win, cub.img.img_ptr, 0, 0);
+
+	mlx_hook(cub.win, 17, 0, esc, &cub);
 
 	mlx_loop(cub.mlx);
 	free_all(&cub);
