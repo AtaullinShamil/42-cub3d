@@ -6,15 +6,15 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 16:44:00 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/11/02 03:56:26 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/11/02 05:11:08 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STATE_H
 # define STATE_H
 
-# define RES_X	1000
-# define RES_Y	1000
+# define RES_X	720	////
+# define RES_Y	480	////
 
 typedef struct s_amount
 {
@@ -26,10 +26,34 @@ typedef struct s_amount
 	int	n_c;
 }	t_amount;
 
+typedef struct s_img_info	////
+{							////
+	void	*img;			////
+	int		*adr;			////
+	int		x;				////
+	int		y;				////
+	int		endian;			////
+}	t_img_info;				////
+
+typedef struct s_img		////
+{							////
+	t_img_info	no;			////
+	t_img_info	we;			////
+	t_img_info	so;			////
+	t_img_info	ea;			////
+	void	*img_ptr;		////
+	int		*data_addr;		////
+	int			bpp;		////
+	int			size_line;	////
+	int			endian;		////
+}	t_img;					////
+
+
 typedef struct s_state
 {
 	void		*mlx;
 	void		*win;
+	t_img		img;			////
 	char		**file;
 	char		**info[6];
 	t_amount	data;
@@ -38,7 +62,9 @@ typedef struct s_state
 	char		*c_we;
 	char		*c_no;
 	char		*c_so;
+	int			floor_color;	////
 	int			floor[3];
+	int			ceiling_color;	////
 	int			ceiling[3];
 }	t_state;
 
