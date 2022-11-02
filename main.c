@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:15:10 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/11/02 17:10:18 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/11/02 17:12:13 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 int	esc(t_state *cub)
 {
 	mlx_destroy_window(cub->mlx, cub->win);
+	free_all(cub);
 	exit(0);
 }
 
@@ -72,6 +73,5 @@ int	main(int argc, char **argv)
 	mlx_hook(cub.win, 17, 0, esc, &cub);
 
 	mlx_loop(cub.mlx);
-	free_all(&cub);
 	return (0);
 }
