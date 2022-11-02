@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 16:44:00 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/11/02 17:15:57 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/11/02 17:22:52 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,13 @@ typedef struct s_img		////
 	t_img_info	window;
 }	t_img;					////
 
+typedef struct s_char_img
+{
+	char		*c_ea;
+	char		*c_we;
+	char		*c_no;
+	char		*c_so;
+}	t_char_img;
 
 typedef struct s_state
 {
@@ -54,10 +61,7 @@ typedef struct s_state
 	char		**info[6];
 	t_amount	data;
 	char		**map;
-	char		*c_ea;
-	char		*c_we;
-	char		*c_no;
-	char		*c_so;
+	t_char_img	sprites;
 	int			floor;
 	int			ceiling;
 }	t_state;

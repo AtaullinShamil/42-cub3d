@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:15:10 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/11/02 17:18:43 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/11/02 17:26:14 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,6 @@ int	main(int argc, char **argv)
 	mlx_put_image_to_window(cub.mlx, cub.win, cub.img.window.img, 0, 0);
 
 	mlx_hook(cub.win, 17, 0, esc, &cub);
-
 	mlx_loop(cub.mlx);
 	return (0);
 }
