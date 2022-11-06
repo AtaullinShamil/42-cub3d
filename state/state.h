@@ -6,13 +6,14 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 16:44:00 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/11/06 18:36:22 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/11/06 19:30:27 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STATE_H
 # define STATE_H
 
+# include "../libft/libft.h"
 # include "../mlx/mlx.h"
 
 # define RES_X	1280
@@ -126,5 +127,7 @@ typedef struct s_state
 
 void	init_amount(t_amount *data);
 void	set_all_textures(t_state *cub);
+void	init_player(t_state *cub);
+void	init_i_map(t_state *cub);
 
 #endif

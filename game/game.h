@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 18:53:56 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/11/06 19:11:47 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/11/06 19:26:19 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@
 # define MS 0.25
 # define RS 0.20
 
-void	init_player(t_state *cub);
 int		game(int key, t_state *cub);
 void	render(t_state *cub);
 void	draw_textures(t_state *data, int i);

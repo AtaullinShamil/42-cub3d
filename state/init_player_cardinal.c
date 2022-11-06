@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   player_cardinal_init.c                             :+:      :+:    :+:   */
+/*   init_player_cardinal.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 21:53:54 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/11/06 18:51:44 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/11/06 19:27:43 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "game.h"
+#include "state.h"
 
 static void	west(t_state *cub, int i, int j)
 {
