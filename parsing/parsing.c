@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:39:50 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/10/30 18:42:59 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/11/04 22:11:23 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,14 @@ static void	parse_conf(int argc, char **argv)
 	close(fd);
 }
 
+static void	init_map(t_state *map)
+{
+	map->map.n = 0;
+	map->map.n = 0;
+	map->map.n = 0;
+	map->map.n = 0;
+}
+
 void	parsing(int argc, char **argv, t_state *cub)
 {
 	parse_conf(argc, argv);
@@ -36,6 +44,7 @@ void	parsing(int argc, char **argv, t_state *cub)
 	parse_strings(cub);
 	parse_repeats(cub);
 	init_arg(cub);
-	cub->map = &cub->file[6];
-	parse_map(cub->map);
+	cub->map.map = &cub->file[6];
+	parse_map(cub->map.map);
+	init_map(cub);
 }
