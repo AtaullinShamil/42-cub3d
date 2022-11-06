@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 18:54:43 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/11/06 18:05:33 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/11/06 18:30:41 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,13 +103,13 @@ void	draw_func_helper(t_state *data)
 	else
 		data->ray.perp_wall_dist = (data->ray.side_dist_y - \
 		data->ray.delta_dist_y);
-	data->ray.line_height = (int)(RES_X / data->ray.perp_wall_dist);
-		data->ray.draw_start = -data->ray.line_height / 2 + RES_X / 2;
+	data->ray.line_height = (int)(RES_Y / data->ray.perp_wall_dist);
+		data->ray.draw_start = -data->ray.line_height / 2 + RES_Y / 2;
 	if (data->ray.draw_start < 0)
 		data->ray.draw_start = 0;
-	data->ray.draw_end = data->ray.line_height / 2 + RES_X / 2;
-	if (data->ray.draw_end >= RES_X)
-		data->ray.draw_end = RES_X - 1;
+	data->ray.draw_end = data->ray.line_height / 2 + RES_Y / 2;
+	if (data->ray.draw_end >= RES_Y)
+		data->ray.draw_end = RES_Y - 1;
 }
 
 void	prepare_func(t_state	*data)
@@ -129,7 +129,7 @@ void	prepare_func(t_state	*data)
 	if (data->ray.side == 1 && data->ray.ray_dir_y < 0)
 		data->wall.tex_x = T_SIZE - data->wall.tex_x - 1;
 	data->wall.step = 1.0 * T_SIZE / data->ray.line_height;
-	data->wall.tex_pos = (data->ray.draw_start - RES_X / 2 + \
+	data->wall.tex_pos = (data->ray.draw_start - RES_Y / 2 + \
 	data->ray.line_height / 2) * data->wall.step;
 }
 

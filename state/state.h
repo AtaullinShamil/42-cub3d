@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 16:44:00 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/11/06 17:41:48 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/11/06 18:34:15 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include "../mlx/mlx.h"
 
-# define RES_X	1000	////
-# define RES_Y	1000	////
+# define RES_X	1280	////
+# define RES_Y	720	////
 
 typedef struct s_amount
 {
