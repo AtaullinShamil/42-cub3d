@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:42:14 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/11/06 22:27:55 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/11/06 23:07:55 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@
 # define ERR_NUM	"the number must be between 0 and 255 : "
 # define ERR_R		"there is a repetition of arguments in the file"
 # define ERR_M_S	"invalid character in the string : "
-# define ERR_M_C	"there are too many coordinates of start \
-position or there isn't one"
+# define ERR_M_C	"there are too many start positions or there isn't one"
 # define ERR_M_W	"the map should be surrounded by walls"
 # define ERR_M_A	"map error : the map does not meet the conditions"
 # define ERR_XPM	" wall texture not found"
