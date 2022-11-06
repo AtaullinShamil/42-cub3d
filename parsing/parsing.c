@@ -6,12 +6,11 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:39:50 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/11/06 20:04:42 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/11/06 23:04:29 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parsing.h"
-#include "stdio.h"
 
 static void	parse_conf(int argc, char **argv)
 {
