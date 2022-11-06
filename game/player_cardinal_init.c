@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 21:53:54 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/11/04 22:12:14 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/11/06 18:51:44 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,3 @@ void	init_player(t_state *cub)
 		}
 	}
 }
-

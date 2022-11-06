@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 18:54:43 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/11/06 18:42:45 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/11/06 18:53:39 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ static void	draw_ceiling_and_floor(t_state *cub)
 	dst = (unsigned int *)cub->img.window.adr;
 	i = RES_X * RES_Y / 2 + 1;
 	while (--i > 0)
-	*dst++ = cub->ceiling;
+		*dst++ = cub->ceiling;
 	i = RES_X * RES_Y / 2 + 1;
 	while (--i > 0)
-	*dst++ = cub->floor;
+		*dst++ = cub->floor;
 }
 
 static void	init_start_params(t_state *cub, int i)
@@ -73,7 +73,7 @@ static void	calculate_steps(t_state	*data)
 	}
 }
 
-static	void draw_func(t_state *cub)
+static void	draw_func(t_state *cub)
 {
 	int	i;
 
@@ -92,7 +92,8 @@ void	render(t_state *cub)
 {
 	cub->img.window.img = mlx_new_image(cub->mlx, RES_X, RES_Y);
 	cub->img.window.adr = (int *)mlx_get_data_addr(cub->img.window.img, \
-		&cub->img.window.bpp, &cub->img.window.size_line, &cub->img.window.endian);
+		&cub->img.window.bpp, &cub->img.window.size_line, \
+		&cub->img.window.endian);
 	draw_ceiling_and_floor(cub);
 	draw_func(cub);
 	mlx_put_image_to_window(cub->mlx, cub->win, cub->img.window.img, 0, 0);

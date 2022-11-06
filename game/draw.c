@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 18:38:52 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/11/06 18:41:55 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/11/06 18:56:03 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ static int	texturing(t_state *data, unsigned int *color)
 	return (*color);
 }
 
-
 void	draw_textures(t_state *data, int i)
 {
 	int				j;
@@ -86,7 +85,7 @@ void	draw_func_helper(t_state *data)
 		data->ray.perp_wall_dist = (data->ray.side_dist_y - \
 		data->ray.delta_dist_y);
 	data->ray.line_height = (int)(RES_Y / data->ray.perp_wall_dist);
-		data->ray.draw_start = -data->ray.line_height / 2 + RES_Y / 2;
+	data->ray.draw_start = -data->ray.line_height / 2 + RES_Y / 2;
 	if (data->ray.draw_start < 0)
 		data->ray.draw_start = 0;
 	data->ray.draw_end = data->ray.line_height / 2 + RES_Y / 2;
