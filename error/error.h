@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:42:14 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/11/06 19:05:26 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/11/06 20:05:41 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@
 					position or there isn't one"
 # define ERR_M_W	"the map should be surrounded by walls"
 # define ERR_M_A	"map error : the map does not meet the conditions"
+# define ERR_XPM	" wall texture not found"
 
 void	put_error_exit(char *str, char *src);
 void	put_error(char *str, char *src);

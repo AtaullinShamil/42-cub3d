@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:39:50 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/11/04 22:11:23 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/11/06 20:04:42 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,31 @@ static void	parse_conf(int argc, char **argv)
 static void	init_map(t_state *map)
 {
 	map->map.n = 0;
-	map->map.n = 0;
-	map->map.n = 0;
-	map->map.n = 0;
+	map->map.s = 0;
+	map->map.e = 0;
+	map->map.w = 0;
+}
+
+static void	check_texture_path(t_state *cub)
+{
+	int	fd;
+
+	fd = open(cub->sprites.c_no, O_RDONLY);
+	if (fd == -1)
+		put_error_exit(cub->sprites.c_no, ERR_XPM);
+	close(fd);
+	fd = open(cub->sprites.c_so, O_RDONLY);
+	if (fd == -1)
+		put_error_exit(cub->sprites.c_so, ERR_XPM);
+	close(fd);
+	fd = open(cub->sprites.c_ea, O_RDONLY);
+	if (fd == -1)
+		put_error_exit(cub->sprites.c_ea, ERR_XPM);
+	close(fd);
+	fd = open(cub->sprites.c_we, O_RDONLY);
+	if (fd == -1)
+		put_error_exit(cub->sprites.c_we, ERR_XPM);
+	close(fd);
 }
 
 void	parsing(int argc, char **argv, t_state *cub)
@@ -44,6 +66,7 @@ void	parsing(int argc, char **argv, t_state *cub)
 	parse_strings(cub);
 	parse_repeats(cub);
 	init_arg(cub);
+	check_texture_path(cub);
 	cub->map.map = &cub->file[6];
 	parse_map(cub->map.map);
 	init_map(cub);
