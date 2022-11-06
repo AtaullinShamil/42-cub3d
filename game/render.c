@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 18:54:43 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/11/06 17:37:55 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/11/06 18:05:33 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -186,9 +186,7 @@ static	void draw_func(t_state *cub)
 	{
 		init_start_params(cub, i);
 		calculate_steps(cub);
-		write(1, "f\n", 2);
 		dda_algoritm(cub);
-		write(1, "1\n", 2);
 		draw_func_helper(cub);
 		draw_textures(cub, i);
 	}
