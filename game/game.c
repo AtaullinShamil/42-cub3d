@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 19:00:27 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/11/06 19:11:18 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/11/06 22:50:36 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,13 @@ int	game(int key, t_state *cub)
 		move_right(cub);
 	else if (key == LEFT_KEY)
 		move_left(cub);
+	else if (key == 46)
+	{
+		if (cub->map_flag == 0)
+			cub->map_flag = 1;
+		else
+			cub->map_flag = 0;
+		render(cub);
+	}
 	return (0);
 }

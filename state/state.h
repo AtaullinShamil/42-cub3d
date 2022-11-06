@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 16:44:00 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/11/06 20:42:33 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/11/06 22:47:19 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,6 +123,7 @@ typedef struct s_state
 	t_player	player;
 	t_raycast	ray;
 	t_wall		wall;
+	int			map_flag;
 }	t_state;
 
 void	init_amount(t_amount *data);

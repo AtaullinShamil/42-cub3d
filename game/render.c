@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 18:54:43 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/11/06 20:16:59 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/11/06 22:48:27 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,8 @@ void	render(t_state *cub)
 		&cub->img.window.endian);
 	draw_ceiling_and_floor(cub);
 	draw_func(cub);
-	draw_mini_map(cub);
+	if (cub->map_flag == 1)
+		draw_mini_map(cub);
 	mlx_put_image_to_window(cub->mlx, cub->win, cub->img.window.img, 0, 0);
 	mlx_destroy_image(cub->mlx, cub->img.window.img);
 }

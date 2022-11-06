@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 21:53:54 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/11/06 20:41:53 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/11/06 23:01:12 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void	west(t_state *cub, int i, int j)
 
 static void	east(t_state *cub, int i, int j)
 {
-	cub->map.map[i][j] = 0;
+	cub->map.map[i][j] = '0';
 	cub->map.s++;
 	cub->player.x_pos = i;
 	cub->player.y_pos = j;
@@ -38,7 +38,7 @@ static void	east(t_state *cub, int i, int j)
 
 static void	north(t_state *cub, int i, int j)
 {
-	cub->map.map[i][j] = 0;
+	cub->map.map[i][j] = '0';
 	cub->map.w++;
 	cub->player.x_pos = i;
 	cub->player.y_pos = j;
@@ -50,7 +50,7 @@ static void	north(t_state *cub, int i, int j)
 
 static void	sourth(t_state *cub, int i, int j)
 {
-	cub->map.map[i][j] = 0;
+	cub->map.map[i][j] = '0';
 	cub->map.e++;
 	cub->player.x_pos = i;
 	cub->player.y_pos = j;
@@ -81,4 +81,5 @@ void	init_player(t_state *cub)
 				west(cub, i, j);
 		}
 	}
+	cub->map_flag = 1;
 }

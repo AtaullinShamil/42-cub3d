@@ -6,11 +6,12 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 20:12:23 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/11/01 10:06:50 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/11/06 22:44:17 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parsing.h"
+#include "stdio.h"
 
 static int	check_walls_left_to_right(char **map)
 {
@@ -85,10 +86,10 @@ static int	check_map_all(char **map)
 	int	y;
 
 	y = 0;
-	while (++y < split_size(map) - 2)
+	while (++y < split_size(map) - 1)
 	{
-		x = -1;
-		while (++x < (int)ft_strlen(map[y]) - 2)
+		x = 0;
+		while (x++ < (int)ft_strlen(map[y]) - 2)
 		{
 			if (map[y][x] == '0')
 				if (ft_strchr("NSEW01", map[y][x + 1]) == NULL || \
