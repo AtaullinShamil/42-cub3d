@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 19:00:27 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/11/06 18:49:15 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/11/06 19:11:18 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,17 @@ void	move_left(t_state	*data)
 	data->player.plane_y = old_plane_x * sin(-RS) + \
 	data->player.plane_y * cos(-RS);
 	render(data);
+}
+
+int	mouse_hook(int x, int y, t_state *data)
+{
+	(void) y;
+	if (x > data->player.mouse_x)
+		move_right(data);
+	else if (x < data->player.mouse_x)
+		move_left(data);
+	data->player.mouse_x = x;
+	return (0);
 }
 
 int	game(int key, t_state *cub)

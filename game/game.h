@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 18:53:56 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/11/06 18:53:55 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/11/06 19:11:47 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	move_w(t_state	*data);
 void	move_a(t_state	*data);
 void	move_s(t_state	*data);
 void	move_d(t_state	*data);
+int		mouse_hook(int x, int y, t_state *data);
 
 int		esc(t_state *cub);
 
