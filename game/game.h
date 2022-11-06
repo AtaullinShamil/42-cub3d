@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 18:53:56 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/11/05 00:02:39 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/11/06 18:43:50 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define GAME_H
 
 # include "math.h"
-# include "stdio.h"
 
 # include "../mlx/mlx.h"
 # include "../state/state.h"
@@ -35,6 +34,9 @@
 void	init_player(t_state *cub);
 int		game(int key, t_state *cub);
 void	render(t_state *cub);
+void	draw_textures(t_state *data, int i);
+void	draw_func_helper(t_state *data);
+void	dda_algoritm(t_state	*data);
 
 int	esc(t_state *cub);
 

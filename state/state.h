@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 16:44:00 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/11/06 18:34:15 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/11/06 18:36:22 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include "../mlx/mlx.h"
 
-# define RES_X	1280	////
-# define RES_Y	720	////
+# define RES_X	1280
+# define RES_Y	720
 
 typedef struct s_amount
 {
@@ -36,23 +36,23 @@ typedef struct s_char_img
 	char		*c_so;
 }	t_char_img;
 
-typedef struct s_img_info	////
-{							////
-	void	*img;			////
-	int		*adr;			////
-	int		bpp;			////
-	int		size_line;		////
-	int		endian;			////
-}	t_img_info;				////
+typedef struct s_img_info
+{
+	void	*img;
+	int		*adr;
+	int		bpp;
+	int		size_line;
+	int		endian;
+}	t_img_info;
 
-typedef struct s_img		////
-{							////
-	t_img_info	no;			////
-	t_img_info	we;			////
-	t_img_info	so;			////
-	t_img_info	ea;			////
+typedef struct s_img
+{
+	t_img_info	no;
+	t_img_info	we;
+	t_img_info	so;
+	t_img_info	ea;
 	t_img_info	window;
-}	t_img;					////
+}	t_img;
 
 typedef struct s_player
 {
@@ -111,11 +111,10 @@ typedef struct s_state
 {
 	void		*mlx;
 	void		*win;
-	t_img		img;			////
+	t_img		img;
 	char		**file;
 	char		**info[6];
 	t_amount	data;
-	//char		**map;
 	t_map		map;
 	t_char_img	sprites;
 	int			floor;
