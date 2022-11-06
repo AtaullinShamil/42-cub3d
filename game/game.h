@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 18:53:56 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/11/06 19:26:19 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/11/06 20:10:50 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	render(t_state *cub);
 void	draw_textures(t_state *data, int i);
 void	draw_func_helper(t_state *data);
 void	dda_algoritm(t_state	*data);
+void	draw_mini_map(t_state *data);
 
 void	move_w(t_state	*data);
 void	move_a(t_state	*data);

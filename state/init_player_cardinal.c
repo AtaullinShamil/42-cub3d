@@ -6,7 +6,7 @@
 /*   By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 21:53:54 by ntojamur          #+#    #+#             */
-/*   Updated: 2022/11/06 19:27:43 by ntojamur         ###   ########.fr       */
+/*   Updated: 2022/11/06 20:41:53 by ntojamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	west(t_state *cub, int i, int j)
 {
-	cub->map.map[i][j] = 0;
+	cub->map.map[i][j] = '0';
 	cub->map.n++;
 	cub->player.x_pos = i;
 	cub->player.y_pos = j;

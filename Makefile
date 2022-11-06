@@ -6,7 +6,7 @@
 #    By: ntojamur <ntojamur@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/26 18:15:13 by ntojamur          #+#    #+#              #
-#    Updated: 2022/11/06 19:29:39 by ntojamur         ###   ########.fr        #
+#    Updated: 2022/11/06 20:18:23 by ntojamur         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,8 @@ STATE	=	state/state.c \
 GAME	=	game/game.c \
 			game/render.c \
 			game/draw.c \
-			game/key_wasd.c
+			game/key_wasd.c \
+			game/draw_mini_map.c
 
 SRCS	=	$(MAIN) $(PARSING) $(ERROR) $(STATE) $(GAME)
 
