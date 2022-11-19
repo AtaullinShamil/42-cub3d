@@ -5,7 +5,7 @@
 ## How to use
 	>. make
 	>. ./cub3D maps/map_maze.cub
-* Use ```WASD``` and a mouse to play
+* Use ```WASD``` and `mouse` or `← →` to play
 * Use ```M``` to show or remove the minimap
 * Use ```ESC``` to exit
 ## Subject
